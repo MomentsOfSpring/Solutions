@@ -1,8 +1,8 @@
+from lc import *
 # ============================================================
-# 1284. Four Divisors
+# 1390. Four Divisors
 # https://leetcode.com/problems/four-divisors/
 # ============================================================
-from lc import *
 
 
 class Solution:
@@ -52,4 +52,3 @@ Constraints:
 1 <= nums[i] <= 105
 
 """)
-

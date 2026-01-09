@@ -1,6 +1,6 @@
 from lc import *
 # ============================================================
-# 1116. Maximum Level Sum of a Binary Tree
+# 1161. Maximum Level Sum of a Binary Tree
 # https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
 # ============================================================
 

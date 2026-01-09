@@ -5,12 +5,13 @@ from lc import *
 # ============================================================
 
 
+#
 class Solution:
     def maxDotProduct(self, nums1: List[int], nums2: List[int]) -> int:
         memo = {}
 
         def dp(i, j):
-            if i == len(nums1) or j == len(nums2):
+            if i == len(nums1) or j == len(nums2):  # Out of bound
                 return float("-inf")
 
             if (i, j) in memo:
@@ -19,10 +20,10 @@ class Solution:
             current = nums1[i] * nums2[j]
 
             result = max(
-                current + dp(i + 1, j + 1),
-                current,
-                dp(i + 1, j),
-                dp(i, j + 1),
+                current + dp(i + 1, j + 1),  # Take & Go
+                current,  # Take & End
+                dp(i + 1, j),  # Skip nums1 element
+                dp(i, j + 1),  # Skip nums2 element
             )
 
             memo[(i, j)] = result
@@ -30,6 +31,23 @@ class Solution:
             return memo[(i, j)]
 
         return dp(0, 0)
+
+
+#
+class Solution:
+    def maxDotProduct(self, nums1: List[int], nums2: List[int]) -> int:
+        n, m = len(nums1), len(nums2)
+        dp = [[-inf] * (m + 1) for _ in range(n + 1)]
+
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                dp[i][j] = max(
+                    nums1[i - 1] * nums2[j - 1],  # Start subsec
+                    dp[i - 1][j - 1] + nums1[i - 1] * nums2[j - 1],  # Continue subsec
+                    dp[i - 1][j],  # Skip nums1 element
+                    dp[i][j - 1],  # Skip nums2 element
+                )
+        return dp[-1][-1]
 
 
 test("""
