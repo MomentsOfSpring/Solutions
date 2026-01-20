@@ -7,12 +7,11 @@ from lc import *
 
 class Solution:
     def minBitwiseArray(self, nums: List[int]) -> List[int]:
-        def func(num, result=-1):
-            for n in range(1, num):
-                if (n | (n+1)) == num: result = n; break
-            return result
-        return [func(num) for num in nums] 
-        
+        def func(num):
+            for n in range(0, num):
+                if (n | (n+1)) == num: return n
+            return -1
+        return [func(num) for num in nums]
 
 
 test("""
