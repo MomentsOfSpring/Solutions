@@ -1,7 +1,7 @@
 from lc import *
 # ============================================================
-# 3605. Construct the Minimum Bitwise Array I
-# https://leetcode.com/problems/construct-the-minimum-bitwise-array-i/?envType=daily-question&envId=2026-01-20
+# 3314. Construct the Minimum Bitwise Array I
+# https://leetcode.com/problems/construct-the-minimum-bitwise-array-i/
 # ============================================================
 
 
