@@ -10,7 +10,7 @@ class Solution:
         nums.sort()
         diff = 10**9
         for i in range(len(nums)-k+1):
-            curr = abs(nums[i+k-1] - nums[i])
+            curr = nums[i+k-1] - nums[i]
             diff = min(diff, curr)
         return diff
 
